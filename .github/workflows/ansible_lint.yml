@@ -2,7 +2,7 @@
 
 name: ansible lint
 
-on:  # noqa yaml
+on:  # yamllint disable-line rule:truthy
   - push
   - pull_request
 
@@ -16,5 +16,8 @@ jobs:
       - name: install dependencies
         run: pip3 install ansible ansible-lint yamllint
 
-      - name: lint playbook
+      - name: ansible lint
         run: ansible-lint
+
+      - name: yamllint
+        run: yamllint .
