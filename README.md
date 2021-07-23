@@ -15,5 +15,5 @@ Example of how to configure and use the role:
 - hosts: servers
   become: true
   roles:
-    - role: lkiesow.opencast_selinux
+    - role: elan.opencast_selinux
 ```
