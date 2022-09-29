@@ -1,20 +1,19 @@
 ---
-
-- name: install selinux management dependencies
-  package:
+- name: Install selinux management dependencies
+  ansible.builtin.package:
     state: present
     name:
       - python3-libsemanage
       - python3-libselinux
 
-- name: enforce selinux
-  selinux:
+- name: Enforce selinux
+  ansible.builtin.selinux:
     policy: targeted
     state: enforcing
 
-- name: selinux configuration for nginx
-  seboolean:
-    name: httpd_{{ item }}
+- name: Selinux configuration for nginx
+  ansible.builtin.seboolean:
+    name: "httpd_{{ item }}"
     state: true
     persistent: true
   loop:
