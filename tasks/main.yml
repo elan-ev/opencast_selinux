@@ -7,13 +7,13 @@
       - python3-libselinux
 
 - name: Enforce selinux
-  ansible.builtin.selinux:
+  ansible.posix.selinux:
     policy: targeted
     state: enforcing
 
 - name: Selinux configuration for nginx
-  ansible.builtin.seboolean:
-    name: "httpd_{{ item }}"
+  ansible.posix.seboolean:
+    name: httpd_{{ item }}
     state: true
     persistent: true
   loop:
