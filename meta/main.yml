@@ -6,11 +6,12 @@ galaxy_info:
   company: ELAN e.V.
   description: Enable and configure SElinux for Opencast cluster
   license: BSD-3-Clause
-  min_ansible_version: "2.9"
+  min_ansible_version: 2.9.0
   galaxy_tags:
     - opencast
   platforms:
     - name: EL
       versions:
         - "8"
+        - "9"
 dependencies: []
